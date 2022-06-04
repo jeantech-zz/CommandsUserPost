@@ -38,6 +38,9 @@
 						<!--Nav Bar Hooks - Do not delete!!-->
 						<li class="nav-item">
                             <a href="{{ url('/posts') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Posts</a> 
+                         </li>
+                        <li class="nav-item">
+                           <a href="{{ url('/users') }}" class="nav-link"><i class="fab fa-laravel text-info"></i> Users</a> 
                         </li>
                     </ul>
 					@endauth()
