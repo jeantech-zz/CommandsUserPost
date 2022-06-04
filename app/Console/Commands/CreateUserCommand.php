@@ -17,11 +17,11 @@ class CreateUserCommand extends Command
 
     public function handle(GetDataGatewayContract $getDataGateway):int
     {
-        $this->url = "https://jsonplaceholder.typicode.com/users";
+      //  $this->url = "https://jsonplaceholder.typicode.com/users";
+        $this->url = config('app.urlUsers');
         $users = $getDataGateway->getData($this->url);
 
         foreach($users as $user){
-            //dd($user['address']['street']);
             $dataUser = [
                 'name' =>  $user['name'],
                 'email' => $user['email'] ,

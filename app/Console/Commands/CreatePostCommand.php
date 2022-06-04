@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Actions\Posts\CreateActions;
 use App\GetDataGateway\GetDataGatewayContract;
+use App\Repositories\User\ColeccionsUserRepositories;
 
 class CreatePostCommand extends Command
 {
@@ -15,16 +16,19 @@ class CreatePostCommand extends Command
 
     private $url;
 
-    public function handle(GetDataGatewayContract $getDataGateway):int
+    public function handle(GetDataGatewayContract $getDataGateway, ColeccionsUserRepositories $getUserId):int
     {
-        $this->url = "https://jsonplaceholder.typicode.com/posts";
+        $this->url = config('app.urlPosts');
+    
         $posts = $getDataGateway->getData($this->url);
+
+        $idUser = $getUserId->getUserId();
 
         foreach($posts as $post){
             $dataPost = [
                 'title' =>  $post['title'],
                 'body' => $post['body'] ,           
-                'user_id' => $post['userId'] 
+                'user_id' => $idUser 
             ];
             $createPost = CreateActions::execute($dataPost);
         }
