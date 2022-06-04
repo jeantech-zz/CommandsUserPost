@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Actions\User;
+namespace App\Actions\Users;
 
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
@@ -14,7 +14,7 @@ class CreateActions
             'email' => $data['email'] ,
             'password' => Hash::make($data['password']),            
             'address' => $data['address'] ,
-            'phone' => $data['phone_number'] ,
+            'phone' => $data['phone'] ,
             'website' => $data['website'] ,
             'company' => $data['company'] 
         ]);
