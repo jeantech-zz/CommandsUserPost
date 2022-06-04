@@ -2,7 +2,6 @@
 
 namespace App\Actions\Posts;
 
-use Illuminate\Support\Facades\Hash;
 use App\Models\Post;
 
 class CreateActions
