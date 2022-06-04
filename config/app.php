@@ -214,4 +214,6 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+
+    'urlDataUser' => env('URL_DATAUSER' , 'https://jsonplaceholder.typicode.com/users'),
 ];
