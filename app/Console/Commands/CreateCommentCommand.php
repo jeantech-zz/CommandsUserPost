@@ -16,7 +16,7 @@ class CreateCommentCommand extends Command
 
     public function handle(GetDataGatewayContract $getDataGateway, ColeccionsPostRepositories $getPostId):int
     {
-        $this->url = "https://jsonplaceholder.typicode.com/comments";
+        $this->url = config('app.urlComments');
         $comments = $getDataGateway->getData($this->url);
         $idPost = $getPostId->getPostId();
 

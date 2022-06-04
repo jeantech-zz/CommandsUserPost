@@ -215,5 +215,7 @@ return [
     ])->toArray(),
 
 
-    'urlDataUser' => env('URL_DATAUSER' , 'https://jsonplaceholder.typicode.com/users'),
+    'urlUsers' => env('URL_DATAUSER' , 'https://jsonplaceholder.typicode.com/users'),
+    'urlComments' => env('URL_COMMENTS' , 'https://jsonplaceholder.typicode.com/comments'),
+    'urlPosts' => env('URL_POSTS' , 'https://jsonplaceholder.typicode.com/posts'),
 ];
