@@ -18,7 +18,9 @@ class Posts extends Component
     {
 		$keyWord = '%'.$this->keyWord .'%';
         return view('livewire.posts.view', [
-            'posts' => Post::latest()
+             //latest()
+            'posts' => Post::select('posts.*', 'users.name As user_name') 
+                        ->join('users', 'users.id', '=', 'posts.user_id')              
 						->orWhere('title', 'LIKE', $keyWord)
 						->orWhere('body', 'LIKE', $keyWord)
 						->orWhere('user_id', 'LIKE', $keyWord)

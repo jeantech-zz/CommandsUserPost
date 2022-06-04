@@ -34,7 +34,7 @@
 								<td>#</td> 
 								<th>Title</th>
 								<th>Body</th>
-								<th>User Id</th>
+								<th>User Name</th>
 								<td>ACTIONS</td>
 							</tr>
 						</thead>
@@ -44,7 +44,7 @@
 								<td>{{ $loop->iteration }}</td> 
 								<td>{{ $row->title }}</td>
 								<td>{{ $row->body }}</td>
-								<td>{{ $row->user_id }}</td>
+								<td>{{ $row->user_name }}</td>
 								<td width="90">
 								<div class="btn-group">
 									<button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
