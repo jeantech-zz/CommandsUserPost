@@ -14,13 +14,6 @@ class CreateCommentCommand extends Command
 
     protected $description = 'Command for create comment depend of id post random';
 
-    //private ColeccionsPostRepositories $getPost;
-
-   /* public function __construct()
-    {
-        $this->getPostId = new ColeccionsPostRepositories;
-    }*/
-
     public function handle(GetDataGatewayContract $getDataGateway, ColeccionsPostRepositories $getPostId):int
     {
         $this->url = "https://jsonplaceholder.typicode.com/comments";
@@ -38,7 +31,5 @@ class CreateCommentCommand extends Command
             $createPost = CreateActions::execute($dataPost);
             return 1;
         }
-        
-       
     }
 }
