@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 namespace App\Models;
 
@@ -7,16 +7,28 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use HasFactory;
+	use HasFactory;
+	
+    public $timestamps = true;
 
-    protected $fillable = [
-        'title',
-        'body',
-        'user_id',
-    ];
+    protected $table = 'posts';
 
+    protected $fillable = ['title','body','user_id'];
+	
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment', 'post_id', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
     public function user()
     {
-        return $this->belongsTo(User::class,'user_id');
+        return $this->hasOne('App\Models\User', 'id', 'user_id');
     }
+    
 }
