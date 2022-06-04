@@ -2,6 +2,7 @@
 
 namespace App\Actions\User;
 
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class CreateActions
